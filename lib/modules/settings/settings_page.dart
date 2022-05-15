@@ -6,9 +6,14 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OrientedLayout(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(OrientedLayout.isLandscape(context) ? "Landscape" : "Portrait"),
+      ),
+      body: OrientedLayout(
       landscapeBody: Container(color: Colors.red),
       portraitBody: Container(color: Colors.green),
+    ),
     );
   }
 }

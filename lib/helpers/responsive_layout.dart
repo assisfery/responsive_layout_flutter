@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class ResponsiveLayout extends StatelessWidget {
 
-  final int mobileMaxWidth = 576;
-  final int tabletMaxWidth = 768;
-  final int desktopMaxWidth = 992;
+  static const int mobileMaxWidth = 576;
+  static const int tabletMaxWidth = 768;
+  static const int desktopMaxWidth = 992;
   //final int largeMaxWidth = 1200;
   //final int extraLargeMaxWidth = 1400;
 
@@ -25,24 +25,24 @@ class ResponsiveLayout extends StatelessWidget {
       })
       : super(key: key);
 
-  bool isMobile(context)
+  static bool isMobile(context)
   {
     return MediaQuery.of(context).size.width <= mobileMaxWidth;
   }
 
-  bool isTablet(context)
+  static bool isTablet(context)
   {
     return mobileMaxWidth < MediaQuery.of(context).size.width
     && MediaQuery.of(context).size.width <= tabletMaxWidth;
   }
 
-  bool isDesktop(context)
+  static bool isDesktop(context)
   {
     return tabletMaxWidth < MediaQuery.of(context).size.width
     && MediaQuery.of(context).size.width <= desktopMaxWidth;
   }
 
-  bool isLarge(context)
+  static bool isLarge(context)
   {
     return desktopMaxWidth < MediaQuery.of(context).size.width;
     // && MediaQuery.of(context).size.width <= largeMaxWidth;

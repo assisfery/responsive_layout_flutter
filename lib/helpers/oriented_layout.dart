@@ -7,12 +7,22 @@ class OrientedLayout extends StatelessWidget {
 
   const OrientedLayout({ Key? key, required this.landscapeBody, required this.portraitBody }) : super(key: key);
 
+  static bool isLandscape(context)
+  {
+    Orientation currentOrientation = MediaQuery.of(context).orientation;
+    return currentOrientation == Orientation.landscape;
+  }
+
+  static bool isPortrait(context)
+  {
+    Orientation currentOrientation = MediaQuery.of(context).orientation;
+    return currentOrientation != Orientation.landscape;
+  }
+
   @override
   Widget build(BuildContext context) {
 
-    Orientation currentOrientation = MediaQuery.of(context).orientation;
-
-    if(currentOrientation == Orientation.landscape)
+    if(isLandscape(context))
     {
       return landscapeBody;
     }
