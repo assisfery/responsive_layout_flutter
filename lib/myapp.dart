@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_layout_flutter/modules/home/home_page.dart';
 import 'package:responsive_layout_flutter/modules/settings/settings_page.dart';
 
+import 'modules/about/about_page.dart';
+
 class MyApp extends StatelessWidget {
   const MyApp({ Key? key }) : super(key: key);
 
@@ -10,8 +12,9 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home:
-        HomePage()
+        //HomePage()
         //SettingsPage()
+        AboutPage()
       ,
     );
   }
